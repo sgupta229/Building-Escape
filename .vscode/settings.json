@@ -1,7 +1,9 @@
 {
 	"files.exclude": {
+		"/Users/SGGS1234/Desktop/c++/BuildingEscape/.git": true,
 		"/Users/SGGS1234/Desktop/c++/BuildingEscape/.vscode": true,
 		"/Users/SGGS1234/Desktop/c++/BuildingEscape/Content": true,
-		"/Users/SGGS1234/Desktop/c++/BuildingEscape/Intermediate": true
+		"/Users/SGGS1234/Desktop/c++/BuildingEscape/Intermediate": true,
+		"/Users/SGGS1234/Desktop/c++/BuildingEscape/Saved": true
 	}
 }
