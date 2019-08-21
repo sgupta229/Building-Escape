@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "OpenDoor.h"
-#include "GameFramework/Actor.h"
+#include "Gameframework/Actor.h"
 
 // Sets default values for this component's properties
 UOpenDoor::UOpenDoor()
@@ -18,12 +18,12 @@ UOpenDoor::UOpenDoor()
 void UOpenDoor::BeginPlay()
 {
 	Super::BeginPlay();
-	//Get the owner of the actor
 	AActor* Owner = GetOwner();
-	//create a rotator
-	FRotator NewRotation = FRotator(0.f, -60.f, 0.f);
-	//set the door rotation
-	GetOwner()->SetActorRotation(NewRotation);
+
+	FRotator NewRotation = FRotator(0.0f, 60.f, 0.0f);
+
+	Owner->SetActorRotation(NewRotation);
+	
 }
 
 
