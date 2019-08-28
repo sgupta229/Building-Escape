@@ -8,6 +8,7 @@
 #include "GameFramework/PlayerController.h"
 #include "Runtime/Engine/Classes/Engine/World.h"
 #include "GameFramework/Pawn.h"
+#include "Runtime/Engine/Classes/Components/PrimitiveComponent.h"
 #include "OpenDoor.generated.h"
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -37,8 +38,6 @@ private:
 	ATriggerVolume* PressurePlate;
 
 	//a pawn is a type of actor so we can do this
-	UPROPERTY(VisibleAnywhere)
-	AActor* ActorThatOpens;
 
 	UPROPERTY(EditAnywhere)
 	float DoorCloseDelay = 1.f;
@@ -46,4 +45,5 @@ private:
 
 	//Owner of the door
 	AActor* Owner; //owning door
+	float GetTotalMassOfActors(); 
 };

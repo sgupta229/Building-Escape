@@ -17,7 +17,6 @@ void UOpenDoor::BeginPlay()
 {
 	Super::BeginPlay();
 	Owner = GetOwner();
-	ActorThatOpens = GetWorld()->GetFirstPlayerController()->GetPawn();
 }
 
 //opens the door 60 degrees
@@ -37,7 +36,7 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 	//check every frame to see if trigger volume is activated
 	//if it is then open the door
-	if(PressurePlate->IsOverlappingActor(ActorThatOpens)) {
+	if(GetTotalMassOfActors() >= 50.f) {
 		//UE_LOG(LogTemp, Warning, TEXT("Door should open"));
 		OpenDoor();
 		LastDoorOpenTime = GetWorld()->GetTimeSeconds();
@@ -47,7 +46,16 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 	if(GetWorld()->GetTimeSeconds() - LastDoorOpenTime > DoorCloseDelay) {
 		CloseDoor();
 	}
+}
 
+float UOpenDoor::GetTotalMassOfActors() {
+	float TotalMass = 0.f;
+	TArray<AActor*> OverlappingActors;
+	PressurePlate->GetOverlappingActors(OverlappingActors);
+	for(const auto* Actor : OverlappingActors) {
+		TotalMass += Actor->FindComponentByClass<UPrimitiveComponent>()->GetMass();
+	}
+	return TotalMass;
 }
 
 
