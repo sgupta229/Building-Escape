@@ -38,7 +38,7 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 	//check every frame to see if trigger volume is activated
 	//if it is then open the door
 	if(PressurePlate->IsOverlappingActor(ActorThatOpens)) {
-		UE_LOG(LogTemp, Warning, TEXT("Door should open"));
+		//UE_LOG(LogTemp, Warning, TEXT("Door should open"));
 		OpenDoor();
 		LastDoorOpenTime = GetWorld()->GetTimeSeconds();
 	}
