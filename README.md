@@ -3,3 +3,11 @@ A simple first-person game where the objective is to solve puzzles to escape roo
 
 ## Download Demo Video
 ![Game Demo](https://github.com/sgupta229/Building-Escape/blob/master/GameDemo.mov?raw=true)
+
+## How To Play
+Move using WASD. Use the left shift key or right mouse button to interact with objects.
+
+## Additional Info
+
+Unreal Engine Version Used To Develop Game: 4.21.2
+
